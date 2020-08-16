@@ -10,9 +10,11 @@ import com.a6.graficarvalores.databinding.ActivityMostarGraficosJavaBinding;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LegendEntry;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
@@ -56,9 +58,29 @@ public class ActivityGraficarJava extends AppCompatActivity {
         legendEntry.label = "Exterior";
         legendEntries[0] = legendEntry;
 
+        XAxis xAxis = binding.graficoLineas.getXAxis();
+        xAxis.setValueFormatter(new MyValueFormatter());
 
 
 
 
+
+    }
+
+    private class MyValueFormatter extends ValueFormatter {
+        @Override
+        public String getFormattedValue(float value) {
+            switch (String.valueOf(value)) {
+                case "0.0":
+                    return ("Enero");
+                case "1.0":
+                    return ("Febrero");
+                case "2.0":
+                    return ("Marzo");
+                case "3.0":
+                    return ("Abril");
+            }
+            return " ";
+        }
     }
 }
