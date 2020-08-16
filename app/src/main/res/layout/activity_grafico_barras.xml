@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grisClaro"
-    tools:context=".ActivityGraficoLineas">
+    tools:context=".ActivityGraficoBarras">
 
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/grafigoLineKotlin"
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/GraficoBarras"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

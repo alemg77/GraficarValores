@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GraficarValores</string>
+    <string name="graficar_lineas">Graficar Lineas</string>
+    <string name="graficar_barras">Graficar Barras</string>
 </resources>

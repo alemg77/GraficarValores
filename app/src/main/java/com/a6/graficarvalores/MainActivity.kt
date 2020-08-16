@@ -1,9 +1,9 @@
 package com.a6.graficarvalores
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.a6.graficarvalores.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,15 +12,18 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val meses = arrayOf<String> ("Enero", "Febrero", "Marzo", "Abril", "Mayo")
-        val colores = arrayListOf<Int>(Color.BLACK, Color.BLUE, Color.CYAN, Color.GREEN, Color.RED)
 
+        binding.botonVerGraficoLineas.setOnClickListener(View.OnClickListener {
+            val intent = Intent( this, ActivityGraficoLineas::class.java)
+            startActivity(intent)
+        })
 
-        val intent = Intent( this, ActivityGraficarKotlin::class.java)
-        startActivity(intent)
+        binding.botonVerGraficoBarras.setOnClickListener(View.OnClickListener {
+            val intent = Intent( this, ActivityGraficoBarras::class.java)
+            startActivity(intent)
+        })
 
     }
-
 
 }
 

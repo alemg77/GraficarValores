@@ -2,39 +2,20 @@ package com.a6.graficarvalores
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.DisplayMetrics
 import androidx.appcompat.app.AppCompatActivity
 import com.a6.graficarvalores.databinding.ActivityGraficarKotlinBinding
 import com.github.mikephil.charting.components.Description
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.LegendEntry
-import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import java.util.*
 
-class ActivityGraficarKotlin : AppCompatActivity() {
 
-
-    private fun dataValues1(): ArrayList<Entry>? {
-        val dataVals = ArrayList<Entry>()
-        dataVals.add(Entry(0F, 25F))
-        dataVals.add(Entry(1F, 26F))
-        dataVals.add(Entry(2F, 24F))
-        dataVals.add(Entry(3F, 28F))
-        return dataVals
-    }
-
-    private fun dataValues2(): ArrayList<Entry>? {
-        val dataVals = ArrayList<Entry>()
-        dataVals.add(Entry(0F, 30F))
-        dataVals.add(Entry(1F, 34F))
-        dataVals.add(Entry(2F, 28F))
-        dataVals.add(Entry(3F, 36F))
-        return dataVals
-    }
-
+class ActivityGraficoLineas : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +25,9 @@ class ActivityGraficarKotlin : AppCompatActivity() {
 
 
         // Crea los datos
-        val lineDataSet1 = LineDataSet(dataValues1(), "Valores 1")
-        val lineDataSet2 = LineDataSet(dataValues2(), "Valores 2")
+        val dao = DAOgraficos()
+        val lineDataSet1 = LineDataSet(dao.dataValues1(), "Valores 1")
+        val lineDataSet2 = LineDataSet(dao.dataValues2(), "Valores 2")
 
         // Ajusta la forma que muestra cada linea de datos
         lineDataSet1.lineWidth = 3F
@@ -71,11 +53,17 @@ class ActivityGraficarKotlin : AppCompatActivity() {
         grafico.setDrawGridBackground(true)
         grafico.setDrawBorders(true)
 
+        val ds = DisplayMetrics()
+        this.windowManager.defaultDisplay.getMetrics(ds)
+        val width = ds.widthPixels
+        val height = ds.heightPixels
+
         // Muetra un descriptor del grafico de la imagen
         val description = Description()
         description.text = "Temperaturas"
         description.textColor = Color.BLUE
         description.textSize = 20F
+        description.setPosition((width/2).toFloat(), (height*0.1).toFloat())
         grafico.description = description
 
         // Ajusta las leyenda de los datos en la parte inferior de los datos
@@ -102,7 +90,6 @@ class ActivityGraficarKotlin : AppCompatActivity() {
         val xAxis = grafico.xAxis
         val yAxisLeft = grafico.axisLeft
         val yAxisRight = grafico.axisRight
-
         xAxis.valueFormatter = MyValueFormatterMeses()
 
     }

@@ -6,21 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/graficoBarras"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+    <Button
+        android:id="@+id/botonVerGraficoLineas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/graficar_lineas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/graficoTorta"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/graficoBarras"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
         />
+
+    <Button
+        android:id="@+id/botonVerGraficoBarras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/graficar_barras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonVerGraficoLineas" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
