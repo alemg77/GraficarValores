@@ -1,4 +1,4 @@
-package com.a6.graficarvalores;
+package com.a6.graficarvalores.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -60,11 +60,6 @@ public class ActivityGraficarJava extends AppCompatActivity {
 
         XAxis xAxis = binding.graficoLineas.getXAxis();
         xAxis.setValueFormatter(new MyValueFormatter());
-
-
-
-
-
     }
 
     private class MyValueFormatter extends ValueFormatter {

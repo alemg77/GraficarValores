@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivityGraficoBarras"></activity>
-        <activity android:name=".ActivityGraficoLineas" />
-        <activity android:name=".ActivityGraficarJava" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.ActivityGraficoBarras"></activity>
+        <activity android:name=".view.ActivityGraficoLineas" />
+        <activity android:name=".view.ActivityGraficarJava" />
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
