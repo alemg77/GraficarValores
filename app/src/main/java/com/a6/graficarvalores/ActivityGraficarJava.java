@@ -2,9 +2,11 @@ package com.a6.graficarvalores;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.audiofx.AudioEffect;
 import android.os.Bundle;
 
 import com.a6.graficarvalores.databinding.ActivityMostarGraficosJavaBinding;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
@@ -38,6 +40,11 @@ public class ActivityGraficarJava extends AppCompatActivity {
 
         LineData data = new LineData(dataSets);
         binding.graficoLineas.setData(data);
+
+        Description description = new Description();
+        description.setText("zoom");
+
+
 
     }
 }
