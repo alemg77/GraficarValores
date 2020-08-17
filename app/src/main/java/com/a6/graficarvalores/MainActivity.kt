@@ -1,4 +1,4 @@
-package com.a6.graficarvalores.view
+package com.a6.graficarvalores
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.View
 import com.a6.graficarvalores.databinding.ActivityMainBinding
+import com.a6.graficarvalores.view.ActivityGraficoBarras
+import com.a6.graficarvalores.view.ActivityGraficoLineas
 import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
