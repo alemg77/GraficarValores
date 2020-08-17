@@ -1,6 +1,7 @@
 package com.a6.graficarvalores.model
 
 import android.graphics.Color
+import com.a6.graficarvalores.Interfases.GraficoLineas
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
@@ -8,7 +9,7 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet
 import java.util.ArrayList
 
-object DAOgraficos {
+class DAOgraficos : GraficoLineas.Model {
 
     fun dataBarras1(): ArrayList<BarEntry>? {
         val dataVals = ArrayList<BarEntry>()
@@ -28,7 +29,7 @@ object DAOgraficos {
         return dataVals
     }
 
-    fun dataValues1(): ArrayList<Entry>? {
+    private fun dataValues1(): ArrayList<Entry>? {
         val dataVals = ArrayList<Entry>()
         dataVals.add(Entry(0F, 25F))
         dataVals.add(Entry(1F, 26F))
@@ -37,7 +38,7 @@ object DAOgraficos {
         return dataVals
     }
 
-    fun dataValues2(): ArrayList<Entry>? {
+    private fun dataValues2(): ArrayList<Entry>? {
         val dataVals = ArrayList<Entry>()
         dataVals.add(Entry(0F, 30F))
         dataVals.add(Entry(1F, 34F))
@@ -46,7 +47,7 @@ object DAOgraficos {
         return dataVals
     }
 
-    fun prepararDatosGraficoLineal(): LineData {
+    override fun prepararDatosGraficoLineal(): LineData {
         val lineDataSet1 = LineDataSet(dataValues1(), "Valores 1")
         val lineDataSet2 = LineDataSet(dataValues2(), "Valores 2")
         // Ajusta la forma que muestra cada linea de datos

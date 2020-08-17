@@ -1,4 +1,4 @@
-package com.a6.graficarvalores.presenter
+package com.a6.graficarvalores.Interfases
 
 import com.github.mikephil.charting.data.LineData
 
@@ -13,6 +13,6 @@ interface GraficoLineas {
     }
 
     interface Model {
-        fun datosGraficos()
+        fun prepararDatosGraficoLineal(): LineData
     }
 }

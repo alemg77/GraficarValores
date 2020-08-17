@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         anchoPantallaEnPixel = ds.widthPixels
         altoPantallaEnPixel = ds.heightPixels
 
-
         binding.botonVerGraficoLineas.setOnClickListener(View.OnClickListener {
             val intent = Intent( this, ActivityGraficoLineas::class.java)
             startActivity(intent)
@@ -40,10 +39,6 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-
-
-
-
 
 }
 

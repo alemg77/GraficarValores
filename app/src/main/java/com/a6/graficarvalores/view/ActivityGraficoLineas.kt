@@ -3,7 +3,7 @@ package com.a6.graficarvalores.view
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.a6.graficarvalores.presenter.GraficoLineas
+import com.a6.graficarvalores.Interfases.GraficoLineas
 import com.a6.graficarvalores.presenter.GraficosPresenter
 import com.a6.graficarvalores.databinding.ActivityGraficarKotlinBinding
 import com.github.mikephil.charting.data.LineData
