@@ -10,9 +10,9 @@ import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.components.LegendEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 
-class GraficosPresenter (var activityGrafico: GraficoLineas.View) {
+class GraficosPresenter (var activityGrafico: GraficoLineas.View): GraficoLineas.Presenter {
 
-    fun encargate() {
+    override fun gestionarGrafico() {
         activityGrafico.mostrarGrafico(DAOgraficos.prepararDatosGraficoLineal())
     }
 

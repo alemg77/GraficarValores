@@ -9,7 +9,7 @@ interface GraficoLineas {
     }
 
     interface Presenter {
-        fun prepararGrafico()
+        fun gestionarGrafico()
     }
 
     interface Model {
